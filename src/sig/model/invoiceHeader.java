@@ -6,10 +6,10 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
         public class invoiceHeader {
-                private int num;
-                private String customer;
-                private Date date;
-                private ArrayList<invoiceLine>lines;
+                private int _Thenum;
+                private String _customer;
+                private Date d;
+                private ArrayList<invoiceLine> _Alllines;
                 private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
 public  invoiceHeader() {
@@ -17,43 +17,43 @@ public  invoiceHeader() {
 }
 
     public invoiceHeader(int num, String customer, Date date) {
-        this.num = num;
-        this.customer = customer;
-        this.date = date;
+        this._Thenum = num;
+        this._customer = customer;
+        this.d = date;
         }
     public int getNum() {
-        return num;
+        return _Thenum;
     }
 
     public void setNum(int num) {
-        this.num = num;
+        this._Thenum = num;
     }
 
     public String getCustomer() {
-        return customer;
+        return _customer;
     }
 
     public void setCustomer(String customer) {
-        this.customer = customer;
+        this._customer = customer;
     }
 
     public Date getDate() {
-        return date;
+        return d;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.d = date;
     }
     
   public ArrayList<invoiceLine> getLines() {
-        if (lines == null) {
-            lines = new ArrayList<>();
+        if (_Alllines == null) {
+            _Alllines = new ArrayList<>();
         }
-        return lines;
+        return _Alllines;
     }
 
     public void setLines(ArrayList<invoiceLine> lines) {
-        this.lines = lines;
+        this._Alllines = lines;
     }
     
     public double getItemTotal(){
@@ -67,7 +67,7 @@ public  invoiceHeader() {
     }
     @Override
     public String toString() {
-        return  + num + ","+ df.format(date) + ", "+ customer ;
+        return  + _Thenum + ","+ df.format(d) + ", "+ _customer ;
     }
         }
 

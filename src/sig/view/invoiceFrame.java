@@ -5,11 +5,11 @@
 package sig.view;
 
 import java.util.ArrayList;
-import sig.controller.TableSelectionListener;
+import sig.controller.Listeners;
 
-import sig.controller.ActionHandler;
+import sig.model.FileOperations;
 import sig.model.invoiceHeader;
-import sig.model.InvoiceHeaderTable;
+import sig.model.HeadersTable;
 import sig.model.invoiceLine;
 import java.text.SimpleDateFormat;
 import javax.swing.JLabel;
@@ -299,12 +299,12 @@ public class invoiceFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable lineTable;
     // End of variables declaration//GEN-END:variables
-    private ActionHandler handler = new ActionHandler (this);
+    private FileOperations handler = new FileOperations (this);
     private ArrayList<invoiceHeader> invoicesArray;
     private ArrayList<invoiceLine> linesArray;
-    private InvoiceHeaderTable invoiceheaderTable;
+    private HeadersTable invoiceheaderTable;
     public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-    private TableSelectionListener selectionListener = new TableSelectionListener(this);
+    private Listeners selectionListener = new Listeners(this);
 
     
 
@@ -333,11 +333,11 @@ public class invoiceFrame extends javax.swing.JFrame {
         return null;
     }
 
-    public InvoiceHeaderTable getInvoiceheaderTable() {
+    public HeadersTable getInvoiceheaderTable() {
         return invoiceheaderTable;
     }
 
-    public void setInvoiceheaderTable(InvoiceHeaderTable invoiceheaderTable) {
+    public void setInvoiceheaderTable(HeadersTable invoiceheaderTable) {
         this.invoiceheaderTable = invoiceheaderTable;
     }
     
@@ -365,7 +365,7 @@ public class invoiceFrame extends javax.swing.JFrame {
         return TotalLabel;
     }
 
-    public ActionHandler getActionHandler() {
+    public FileOperations getActionHandler() {
         return handler;
     }
 
